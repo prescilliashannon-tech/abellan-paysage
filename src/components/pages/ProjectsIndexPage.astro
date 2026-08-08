@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../ProjectCard.astro';
+import { useTranslations } from '../../i18n/ui';
+import type { Lang } from '../../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const projects = (await getCollection('projects', ({ data }) => data.lang === lang)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<Layout lang={lang} routeKey="projects" title={t('nav.projects')}>
+  <section class="relative h-[46vh] min-h-[360px] flex items-end">
+    <img src="/images/placeholders/jardin-mediterraneen.jpg" alt="" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-ink/45"></div>
+    <div class="relative z-10 mx-auto max-w-7xl w-full px-6 lg:px-10 pb-14">
+      <p class="text-cream/80 text-xs uppercase tracking-[0.3em] mb-4">{t('projects.eyebrow')}</p>
+      <h1 class="font-display text-cream text-4xl sm:text-5xl lg:text-6xl max-w-2xl">{t('projects.title')}</h1>
+      <p class="mt-5 text-cream/90 max-w-xl">{t('projects.text')}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <ProjectCard
+          lang={lang}
+          slug={project.data.pageSlug}
+          title={project.data.title}
+          location={project.data.location}
+          cover={project.data.cover}
+          excerpt={project.data.excerpt}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>

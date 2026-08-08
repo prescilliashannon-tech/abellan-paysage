@@ -1,0 +1,56 @@
+---
+import { useTranslations } from '../i18n/ui';
+import { localizedPath, type Lang } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+
+const links = [
+  { key: 'home', label: t('nav.home') },
+  { key: 'about', label: t('nav.about') },
+  { key: 'services', label: t('nav.services') },
+  { key: 'gallery', label: t('nav.gallery') },
+  { key: 'projects', label: t('nav.projects') },
+  { key: 'contact', label: t('nav.contact') }
+] as const;
+---
+
+<footer class="bg-ink text-cream">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10 py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="lg:col-span-2">
+      <span class="font-display italic text-2xl block">{t('brand.name')}</span>
+      <p class="mt-4 text-cream/70 max-w-sm text-sm leading-relaxed">{t('footer.tagline')}</p>
+    </div>
+
+    <div>
+      <h3 class="text-xs uppercase tracking-widest text-cream/50 mb-4">{t('footer.nav.title')}</h3>
+      <ul class="space-y-2">
+        {links.map((link) => (
+          <li>
+            <a href={localizedPath(lang, link.key)} class="text-sm text-cream/85 hover:text-cream transition-colors">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs uppercase tracking-widest text-cream/50 mb-4">{t('footer.contact.title')}</h3>
+      <ul class="space-y-2 text-sm text-cream/85">
+        <li>Occitanie &amp; Pyrénées-Orientales</li>
+        <li><a href="mailto:abellan.paysage@gmail.com" class="hover:text-cream transition-colors">abellan.paysage@gmail.com</a></li>
+        <li>Abellan Paysage</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-cream/10">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10 py-6 text-xs text-cream/50 flex flex-col sm:flex-row justify-between gap-2">
+      <span>&copy; {year} {t('brand.name')}. {t('footer.rights')}</span>
+    </div>
+  </div>
+</footer>

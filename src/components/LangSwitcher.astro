@@ -1,0 +1,56 @@
+---
+import { languages, localizedPath, type Lang, type RouteKey } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+  routeKey: RouteKey;
+  projectSlug?: string;
+}
+const { lang, routeKey, projectSlug } = Astro.props;
+const otherLangs = (Object.keys(languages) as Lang[]).filter((l) => l !== lang);
+---
+
+<div class="relative" id="lang-switcher">
+  <button
+    id="lang-switcher-button"
+    class="flex items-center gap-1 text-xs uppercase tracking-widest text-ink hover:text-olive transition-colors"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    {lang}
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" class="mt-0.5">
+      <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.3" />
+    </svg>
+  </button>
+  <div
+    id="lang-switcher-menu"
+    class="hidden absolute right-0 top-full mt-3 min-w-[9rem] border border-stone/70 bg-cream shadow-sm"
+  >
+    {otherLangs.map((l) => (
+      <a
+        href={projectSlug ? `${localizedPath(l, routeKey)}${projectSlug}/` : localizedPath(l, routeKey)}
+        class="block px-4 py-3 text-xs uppercase tracking-widest text-ink hover:bg-cream-dark"
+      >
+        {languages[l]}
+      </a>
+    ))}
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById('lang-switcher-button');
+  const menu = document.getElementById('lang-switcher-menu');
+  document.addEventListener('click', (e) => {
+    const target = e.target as Node;
+    if (button?.contains(target)) {
+      const isHidden = menu?.classList.contains('hidden');
+      menu?.classList.toggle('hidden');
+      button.setAttribute('aria-expanded', String(isHidden));
+      return;
+    }
+    if (!menu?.contains(target)) {
+      menu?.classList.add('hidden');
+      button?.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

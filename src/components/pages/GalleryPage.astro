@@ -1,0 +1,148 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/ui';
+import type { Lang } from '../../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const images = [
+  { src: '/images/placeholders/hero-jardin-piscine.jpg', category: 'terraces' },
+  { src: '/images/placeholders/jardin-mediterraneen.jpg', category: 'gardens' },
+  { src: '/images/placeholders/pots-terracotta.jpg', category: 'details' },
+  { src: '/images/placeholders/olivier-jardin.jpg', category: 'gardens' },
+  { src: '/images/placeholders/terrasse-pierre.jpg', category: 'terraces' },
+  { src: '/images/placeholders/composition-pots.jpg', category: 'details' },
+  { src: '/images/placeholders/oliveraie.jpg', category: 'gardens' },
+  { src: '/images/placeholders/jardin-vue-mer.jpg', category: 'terraces' },
+  { src: '/images/placeholders/mur-pierre-vegetal.jpg', category: 'details' },
+  { src: '/images/placeholders/jardin-botanique.jpg', category: 'gardens' },
+  { src: '/images/placeholders/vue-arche-mediterraneenne.jpg', category: 'terraces' },
+  { src: '/images/placeholders/bougainvillier-mur.jpg', category: 'details' },
+  { src: '/images/placeholders/jardin-capri.jpg', category: 'gardens' },
+  { src: '/images/placeholders/cour-oleandre.jpg', category: 'details' },
+  { src: '/images/placeholders/jardin-alhambra.jpg', category: 'gardens' },
+  { src: '/images/placeholders/allee-jardin.jpg', category: 'gardens' }
+];
+
+const filters = [
+  { key: 'all', label: t('gallery.filter.all') },
+  { key: 'gardens', label: t('gallery.filter.gardens') },
+  { key: 'terraces', label: t('gallery.filter.terraces') },
+  { key: 'details', label: t('gallery.filter.details') }
+];
+---
+
+<Layout lang={lang} routeKey="gallery" title={t('nav.gallery')}>
+  <section class="mx-auto max-w-7xl px-6 lg:px-10 pt-36 pb-14">
+    <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4" data-reveal>{t('gallery.eyebrow')}</p>
+    <h1 class="font-display text-4xl sm:text-5xl max-w-2xl" data-reveal>{t('gallery.title')}</h1>
+    <p class="mt-5 text-ink-soft max-w-xl" data-reveal>{t('gallery.text')}</p>
+
+    <div class="mt-10 flex flex-wrap gap-3" id="gallery-filters">
+      {filters.map((filter, i) => (
+        <button
+          data-filter={filter.key}
+          class:list={[
+            'gallery-filter-btn px-5 py-2.5 text-xs uppercase tracking-widest border transition-colors',
+            i === 0 ? 'border-ink bg-ink text-cream' : 'border-stone text-ink hover:border-ink'
+          ]}
+        >
+          {filter.label}
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-2 lg:px-8 pb-24">
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-2">
+      {images.map((img, i) => (
+        <button
+          class="gallery-item block aspect-square overflow-hidden group"
+          data-category={img.category}
+          data-index={i}
+          aria-label="Agrandir la photo"
+        >
+          <img
+            src={img.src}
+            alt=""
+            loading="lazy"
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <div
+    id="lightbox"
+    class="hidden fixed inset-0 z-50 bg-ink/95 items-center justify-center px-4"
+  >
+    <button id="lightbox-close" class="absolute top-6 right-6 text-cream/80 hover:text-cream text-3xl leading-none" aria-label="Fermer">&times;</button>
+    <button id="lightbox-prev" class="absolute left-3 sm:left-8 text-cream/70 hover:text-cream text-4xl leading-none" aria-label="Précédent">&#8249;</button>
+    <img id="lightbox-image" src="" alt="" class="max-h-[85vh] max-w-[90vw] object-contain" />
+    <button id="lightbox-next" class="absolute right-3 sm:right-8 text-cream/70 hover:text-cream text-4xl leading-none" aria-label="Suivant">&#8250;</button>
+  </div>
+
+  <script define:vars={{ images: images.map((i) => i.src) }}>
+    const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+    const items = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        filterButtons.forEach((b) => {
+          b.classList.remove('border-ink', 'bg-ink', 'text-cream');
+          b.classList.add('border-stone', 'text-ink');
+        });
+        btn.classList.remove('border-stone', 'text-ink');
+        btn.classList.add('border-ink', 'bg-ink', 'text-cream');
+
+        items.forEach((item) => {
+          const match = filter === 'all' || item.getAttribute('data-category') === filter;
+          item.style.display = match ? '' : 'none';
+        });
+      });
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImage.src = images[currentIndex];
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.classList.add('no-scroll');
+    }
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.classList.remove('no-scroll');
+    }
+    function showRelative(delta) {
+      currentIndex = (currentIndex + delta + images.length) % images.length;
+      lightboxImage.src = images[currentIndex];
+    }
+
+    items.forEach((item) => {
+      item.addEventListener('click', () => openLightbox(Number(item.getAttribute('data-index'))));
+    });
+    document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev')?.addEventListener('click', () => showRelative(-1));
+    document.getElementById('lightbox-next')?.addEventListener('click', () => showRelative(1));
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (lightbox?.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showRelative(-1);
+      if (e.key === 'ArrowRight') showRelative(1);
+    });
+  </script>
+</Layout>

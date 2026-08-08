@@ -1,0 +1,95 @@
+---
+import { useTranslations } from '../i18n/ui';
+import { localizedPath, type Lang, type RouteKey } from '../i18n/routes';
+import LangSwitcher from './LangSwitcher.astro';
+
+interface Props {
+  lang: Lang;
+  routeKey: RouteKey;
+  projectSlug?: string;
+}
+const { lang, routeKey, projectSlug } = Astro.props;
+const t = useTranslations(lang);
+
+const links = [
+  { key: 'home', label: t('nav.home') },
+  { key: 'about', label: t('nav.about') },
+  { key: 'services', label: t('nav.services') },
+  { key: 'gallery', label: t('nav.gallery') },
+  { key: 'projects', label: t('nav.projects') }
+] as const;
+---
+
+<header class="fixed top-0 inset-x-0 z-40 bg-cream/90 backdrop-blur-sm border-b border-stone/60">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
+    <a href={localizedPath(lang, 'home')} class="flex flex-col leading-none group">
+      <span class="font-display italic text-2xl text-ink group-hover:text-olive transition-colors">Abellan</span>
+      <span class="text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft mt-0.5">Paysage</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-9">
+      {links.map((link) => {
+        const href = localizedPath(lang, link.key);
+        const isActive = routeKey === link.key;
+        return (
+          <a
+            href={href}
+            class:list={[
+              'text-sm tracking-wide uppercase transition-colors',
+              isActive ? 'text-olive' : 'text-ink hover:text-olive'
+            ]}
+          >
+            {link.label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <div class="flex items-center gap-5">
+      <LangSwitcher lang={lang} routeKey={routeKey} projectSlug={projectSlug} />
+      <a
+        href={localizedPath(lang, 'contact')}
+        class="hidden sm:inline-flex items-center border border-ink px-5 py-2.5 text-xs uppercase tracking-widest text-ink hover:bg-ink hover:text-cream transition-colors"
+      >
+        {t('nav.cta')}
+      </a>
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden flex flex-col gap-1.5 p-2"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <span class="w-6 h-px bg-ink"></span>
+        <span class="w-6 h-px bg-ink"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="lg:hidden hidden flex-col border-t border-stone/60 bg-cream">
+    {links.map((link) => (
+      <a
+        href={localizedPath(lang, link.key)}
+        class="px-6 py-4 text-sm uppercase tracking-wide text-ink border-b border-stone/40"
+      >
+        {link.label}
+      </a>
+    ))}
+    <a
+      href={localizedPath(lang, 'contact')}
+      class="px-6 py-4 text-sm uppercase tracking-wide text-olive"
+    >
+      {t('nav.cta')}
+    </a>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    const isHidden = menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    menu?.classList.toggle('flex');
+    btn.setAttribute('aria-expanded', String(isHidden));
+  });
+</script>

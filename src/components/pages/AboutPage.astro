@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/ui';
+import { localizedPath, type Lang } from '../../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const values = [
+  { title: t('about.values.1.title'), text: t('about.values.1.text') },
+  { title: t('about.values.2.title'), text: t('about.values.2.text') },
+  { title: t('about.values.3.title'), text: t('about.values.3.text') }
+];
+---
+
+<Layout lang={lang} routeKey="about" title={t('nav.about')}>
+  <section class="relative h-[46vh] min-h-[360px] flex items-end">
+    <img src="/images/placeholders/jardin-alhambra.jpg" alt="" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-ink/45"></div>
+    <div class="relative z-10 mx-auto max-w-7xl w-full px-6 lg:px-10 pb-14">
+      <p class="text-cream/80 text-xs uppercase tracking-[0.3em] mb-4">{t('about.eyebrow')}</p>
+      <h1 class="font-display text-cream text-4xl sm:text-5xl lg:text-6xl max-w-2xl">{t('about.title')}</h1>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32 grid lg:grid-cols-2 gap-14 items-start">
+    <div data-reveal>
+      <p class="text-ink-soft leading-relaxed">{t('about.text1')}</p>
+      <p class="mt-5 text-ink-soft leading-relaxed">{t('about.text2')}</p>
+      <p class="mt-5 text-ink-soft leading-relaxed">{t('about.text3')}</p>
+
+      <div class="mt-10 border-t border-stone/60 pt-8">
+        <p class="text-xs uppercase tracking-widest text-olive mb-2">{t('about.zone.title')}</p>
+        <p class="font-display text-xl">{t('about.zone.text')}</p>
+      </div>
+
+      <a
+        href={localizedPath(lang, 'contact')}
+        class="mt-10 inline-flex items-center gap-2 border border-ink px-6 py-3.5 text-xs uppercase tracking-widest text-ink hover:bg-ink hover:text-cream transition-colors"
+      >
+        {t('about.cta')}
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4" data-reveal>
+      <img src="/images/placeholders/pots-terracotta.jpg" alt="" class="w-full h-full object-cover aspect-[3/4]" />
+      <img src="/images/placeholders/mur-pierre-vegetal.jpg" alt="" class="w-full h-full object-cover aspect-[3/4] mt-8" />
+    </div>
+  </section>
+
+  <section class="bg-cream-dark py-24 lg:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+      <h2 class="font-display text-3xl sm:text-4xl mb-14" data-reveal>{t('about.values.title')}</h2>
+      <div class="grid sm:grid-cols-3 gap-px bg-stone/60">
+        {values.map((value, i) => (
+          <div class="bg-cream-dark p-8" data-reveal>
+            <span class="text-xs text-olive tracking-widest">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="font-display text-xl mt-3 mb-3">{value.title}</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">{value.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

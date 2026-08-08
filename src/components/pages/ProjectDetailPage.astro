@@ -1,0 +1,84 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../ProjectCard.astro';
+import { useTranslations } from '../../i18n/ui';
+import { localizedPath, type Lang } from '../../i18n/routes';
+
+interface Props {
+  lang: Lang;
+  project: CollectionEntry<'projects'>;
+}
+const { lang, project } = Astro.props;
+const t = useTranslations(lang);
+const { Content } = await render(project);
+
+const otherProjects = (await getCollection('projects', ({ data }) => data.lang === lang))
+  .filter((p) => p.data.pageSlug !== project.data.pageSlug)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+---
+
+<Layout
+  lang={lang}
+  routeKey="projects"
+  projectSlug={`${project.data.pageSlug}/`}
+  title={project.data.title}
+  description={project.data.excerpt}
+>
+  <section class="relative h-[70vh] min-h-[480px] flex items-end">
+    <img src={project.data.cover} alt="" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-transparent"></div>
+    <div class="relative z-10 mx-auto max-w-7xl w-full px-6 lg:px-10 pb-16">
+      <a
+        href={localizedPath(lang, 'projects')}
+        class="inline-flex items-center gap-2 text-cream/80 hover:text-cream text-xs uppercase tracking-widest mb-6"
+      >
+        &larr; {t('projects.back')}
+      </a>
+      <p class="text-cream/80 text-xs uppercase tracking-[0.3em] mb-4">{project.data.location}</p>
+      <h1 class="font-display text-cream text-4xl sm:text-5xl lg:text-6xl max-w-3xl">{project.data.title}</h1>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 lg:px-10 py-20 lg:py-28">
+    <div class="prose-content text-ink-soft leading-relaxed space-y-5" data-reveal>
+      <Content />
+    </div>
+  </section>
+
+  {project.data.images.length > 0 && (
+    <section class="pb-24">
+      <p class="mx-auto max-w-7xl px-6 lg:px-10 text-xs uppercase tracking-[0.3em] text-olive mb-6">
+        {t('projects.gallery')}
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 px-2 lg:px-8">
+        {project.data.images.map((img) => (
+          <div class="aspect-[4/3] overflow-hidden" data-reveal>
+            <img src={img} alt={project.data.title} class="h-full w-full object-cover" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {otherProjects.length > 0 && (
+    <section class="bg-cream-dark py-24 lg:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <h2 class="font-display text-3xl mb-12" data-reveal>{t('projects.otherProjects')}</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {otherProjects.map((p) => (
+            <ProjectCard
+              lang={lang}
+              slug={p.data.pageSlug}
+              title={p.data.title}
+              location={p.data.location}
+              cover={p.data.cover}
+              excerpt={p.data.excerpt}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

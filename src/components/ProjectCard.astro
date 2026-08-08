@@ -1,0 +1,36 @@
+---
+import { useTranslations } from '../i18n/ui';
+import { localizedPath, type Lang } from '../i18n/routes';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+  title: string;
+  location: string;
+  cover: string;
+  excerpt?: string;
+}
+const { lang, slug, title, location, cover, excerpt } = Astro.props;
+const t = useTranslations(lang);
+const href = `${localizedPath(lang, 'projects')}${slug}/`;
+---
+
+<a href={href} class="group block border border-stone/60 bg-cream" data-reveal>
+  <div class="aspect-[4/5] overflow-hidden">
+    <img
+      src={cover}
+      alt={title}
+      loading="lazy"
+      class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+  </div>
+  <div class="p-6">
+    <span class="text-[0.65rem] uppercase tracking-widest text-olive">{location}</span>
+    <h3 class="font-display text-xl mt-2 leading-snug">{title}</h3>
+    {excerpt && <p class="mt-2 text-sm text-ink-soft line-clamp-2">{excerpt}</p>}
+    <span class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-ink group-hover:text-olive transition-colors">
+      {t('projects.viewProject')}
+      <span class="transition-transform group-hover:translate-x-1">→</span>
+    </span>
+  </div>
+</a>

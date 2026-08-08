@@ -1,0 +1,175 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../ProjectCard.astro';
+import { useTranslations } from '../../i18n/ui';
+import { localizedPath, type Lang } from '../../i18n/routes';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const allProjects = await getCollection('projects', ({ data }) => data.lang === lang);
+const featuredProjects = allProjects.sort((a, b) => a.data.order - b.data.order).slice(0, 3);
+
+const services = [
+  { title: t('services.1.title'), text: t('services.1.text') },
+  { title: t('services.2.title'), text: t('services.2.text') },
+  { title: t('services.3.title'), text: t('services.3.text') },
+  { title: t('services.4.title'), text: t('services.4.text') }
+];
+
+const galleryPreview = [
+  '/images/placeholders/jardin-mediterraneen.jpg',
+  '/images/placeholders/pots-terracotta.jpg',
+  '/images/placeholders/bougainvillier-mur.jpg',
+  '/images/placeholders/jardin-botanique.jpg'
+];
+---
+
+<Layout lang={lang} routeKey="home" showIntro={true}>
+  <!-- Hero -->
+  <section class="relative h-[92vh] min-h-[560px] flex items-end">
+    <img
+      src="/images/placeholders/hero-jardin-piscine.jpg"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-ink/30"></div>
+    <div class="relative z-10 mx-auto max-w-7xl w-full px-6 lg:px-10 pb-20">
+      <p class="text-cream/80 text-xs uppercase tracking-[0.3em] mb-5">{t('home.hero.eyebrow')}</p>
+      <h1 class="font-display text-cream text-4xl sm:text-6xl lg:text-7xl leading-[1.05] max-w-3xl">
+        {t('home.hero.title')}
+      </h1>
+      <p class="mt-6 text-cream/90 text-base sm:text-lg max-w-xl">{t('home.hero.subtitle')}</p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a
+          href={localizedPath(lang, 'projects')}
+          class="inline-flex items-center gap-2 bg-cream text-ink px-6 py-3.5 text-xs uppercase tracking-widest hover:bg-cream-dark transition-colors"
+        >
+          {t('home.hero.cta1')}
+        </a>
+        <a
+          href={localizedPath(lang, 'contact')}
+          class="inline-flex items-center gap-2 border border-cream text-cream px-6 py-3.5 text-xs uppercase tracking-widest hover:bg-cream hover:text-ink transition-colors"
+        >
+          {t('home.hero.cta2')}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro / About teaser -->
+  <section class="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32 grid lg:grid-cols-2 gap-14 items-center">
+    <div data-reveal>
+      <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.intro.eyebrow')}</p>
+      <h2 class="font-display text-3xl sm:text-4xl leading-tight max-w-lg">{t('home.intro.title')}</h2>
+      <p class="mt-6 text-ink-soft leading-relaxed max-w-lg">{t('home.intro.text1')}</p>
+      <p class="mt-4 text-ink-soft leading-relaxed max-w-lg">{t('home.intro.text2')}</p>
+      <a
+        href={localizedPath(lang, 'about')}
+        class="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-ink border-b border-ink pb-1 hover:text-olive hover:border-olive transition-colors"
+      >
+        {t('home.intro.cta')} →
+      </a>
+    </div>
+    <div class="aspect-[4/5] overflow-hidden" data-reveal>
+      <img src="/images/placeholders/olivier-jardin.jpg" alt="" class="h-full w-full object-cover" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Services teaser -->
+  <section class="bg-cream-dark py-24 lg:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14" data-reveal>
+        <div>
+          <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.services.eyebrow')}</p>
+          <h2 class="font-display text-3xl sm:text-4xl">{t('home.services.title')}</h2>
+        </div>
+        <a
+          href={localizedPath(lang, 'services')}
+          class="text-xs uppercase tracking-widest text-ink border-b border-ink pb-1 hover:text-olive hover:border-olive transition-colors w-fit"
+        >
+          {t('home.services.cta')} →
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-stone/60">
+        {services.map((service) => (
+          <div class="bg-cream-dark p-8" data-reveal>
+            <h3 class="font-display text-lg mb-3">{service.title}</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">{service.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects teaser -->
+  <section class="mx-auto max-w-7xl px-6 lg:px-10 py-24 lg:py-32">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14" data-reveal>
+      <div>
+        <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.projects.eyebrow')}</p>
+        <h2 class="font-display text-3xl sm:text-4xl max-w-xl">{t('home.projects.title')}</h2>
+        <p class="mt-4 text-ink-soft max-w-lg">{t('home.projects.text')}</p>
+      </div>
+      <a
+        href={localizedPath(lang, 'projects')}
+        class="text-xs uppercase tracking-widest text-ink border-b border-ink pb-1 hover:text-olive hover:border-olive transition-colors w-fit"
+      >
+        {t('home.projects.cta')} →
+      </a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {featuredProjects.map((project) => (
+        <ProjectCard
+          lang={lang}
+          slug={project.data.pageSlug}
+          title={project.data.title}
+          location={project.data.location}
+          cover={project.data.cover}
+          excerpt={project.data.excerpt}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- Gallery teaser -->
+  <section class="pb-24 lg:pb-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10" data-reveal>
+      <div>
+        <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.gallery.eyebrow')}</p>
+        <h2 class="font-display text-3xl sm:text-4xl">{t('home.gallery.title')}</h2>
+      </div>
+      <a
+        href={localizedPath(lang, 'gallery')}
+        class="text-xs uppercase tracking-widest text-ink border-b border-ink pb-1 hover:text-olive hover:border-olive transition-colors w-fit"
+      >
+        {t('home.gallery.cta')} →
+      </a>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 px-2 lg:px-10">
+      {galleryPreview.map((src) => (
+        <a href={localizedPath(lang, 'gallery')} class="block aspect-square overflow-hidden group" data-reveal>
+          <img src={src} alt="" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="bg-olive-dark text-cream">
+    <div class="mx-auto max-w-4xl px-6 lg:px-10 py-24 text-center" data-reveal>
+      <h2 class="font-display text-3xl sm:text-4xl max-w-2xl mx-auto">{t('home.cta.title')}</h2>
+      <p class="mt-5 text-cream/85 max-w-xl mx-auto">{t('home.cta.text')}</p>
+      <a
+        href={localizedPath(lang, 'contact')}
+        class="mt-9 inline-flex items-center gap-2 bg-cream text-ink px-7 py-3.5 text-xs uppercase tracking-widest hover:bg-cream-dark transition-colors"
+      >
+        {t('home.cta.button')}
+      </a>
+    </div>
+  </section>
+</Layout>
