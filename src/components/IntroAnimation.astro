@@ -12,28 +12,73 @@ const word2 = 'PAYSAGE'.split('');
 ---
 
 <div id="intro-overlay" role="presentation" aria-hidden="true">
-  <button id="intro-skip" class="absolute bottom-8 right-8 text-[0.65rem] uppercase tracking-[0.25em] text-cream/50 hover:text-cream transition-colors">
+  <button
+    id="intro-skip"
+    class="absolute bottom-8 right-8 text-[0.65rem] uppercase tracking-[0.25em] text-ink/40 hover:text-ink transition-colors"
+  >
     {t('intro.enter')}
   </button>
-  <div class="flex flex-col items-center">
-    <div class="font-display italic text-cream text-5xl sm:text-7xl flex" aria-hidden="true">
-      {word1.map((letter, i) => (
-        <span class="intro-letter" style={`animation-delay:${0.35 + i * 0.05}s`}>{letter}</span>
-      ))}
+  <div class="relative flex flex-col items-center px-6">
+    <img
+      src="/images/brand/logo-badge-top.png"
+      alt=""
+      class="intro-badge intro-badge-top w-64 sm:w-80"
+    />
+    <div class="intro-text-block relative z-10 -mt-3 sm:-mt-4 flex flex-col items-center">
+      <div class="flex" aria-hidden="true">
+        {word1.map((letter, i) => (
+          <span
+            class="intro-letter font-body font-black text-[#3B3F2F] text-3xl sm:text-5xl tracking-tight"
+            style={`animation-delay:${0.5 + i * 0.045}s`}
+          >
+            {letter}
+          </span>
+        ))}
+      </div>
+      <div class="mt-1 sm:mt-2 flex" aria-hidden="true">
+        {word2.map((letter, i) => (
+          <span
+            class="intro-letter font-body font-bold text-[#575F3C] text-xs sm:text-sm tracking-[0.35em]"
+            style={`animation-delay:${0.95 + i * 0.035}s`}
+          >
+            {letter}
+          </span>
+        ))}
+      </div>
+      <p class="intro-tagline mt-2 text-[10px] sm:text-xs text-[#575F3C]/80 tracking-wide">
+        Recréez la nature chez vous
+      </p>
     </div>
-    <div class="mt-3 flex text-cream/80 text-[0.7rem] sm:text-xs tracking-[0.5em] uppercase">
-      {word2.map((letter, i) => (
-        <span class="intro-letter" style={`animation-delay:${0.9 + i * 0.04}s`}>{letter}</span>
-      ))}
-    </div>
-    <div class="intro-rule mt-6 h-px w-24 bg-cream/40"></div>
+    <img
+      src="/images/brand/logo-badge-bottom.png"
+      alt=""
+      class="intro-badge intro-badge-bottom mt-2 sm:mt-3 w-64 sm:w-80"
+    />
   </div>
 </div>
 
 <script>
   const overlay = document.getElementById('intro-overlay');
   const skipBtn = document.getElementById('intro-skip');
+  const topBadge = document.querySelector<HTMLElement>('.intro-badge-top');
+  const bottomBadge = document.querySelector<HTMLElement>('.intro-badge-bottom');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // The two badge crops were cut from a 6031px-wide source image, removing a
+  // 1420px band (y 2380 to 3800) that held the text. Closing distance must be
+  // computed from that source ratio, not from the HTML text block's own
+  // height, or the two arcs won't reconnect cleanly.
+  const SOURCE_WIDTH = 6031;
+  const SOURCE_GAP = 1420;
+
+  function closeBadges() {
+    if (!overlay || !topBadge || !bottomBadge) return;
+    const scale = topBadge.getBoundingClientRect().width / SOURCE_WIDTH;
+    const shift = (SOURCE_GAP * scale) / 2 + 2;
+    topBadge.style.transform = `translateY(${shift}px)`;
+    bottomBadge.style.transform = `translateY(-${shift}px)`;
+    overlay.classList.add('intro-closing');
+  }
 
   function hideIntro() {
     if (!overlay) return;
@@ -41,7 +86,7 @@ const word2 = 'PAYSAGE'.split('');
     document.body.classList.remove('no-scroll');
     window.setTimeout(() => {
       overlay.style.display = 'none';
-    }, 1150);
+    }, 1000);
   }
 
   if (!overlay) {
@@ -51,9 +96,11 @@ const word2 = 'PAYSAGE'.split('');
   } else {
     document.body.classList.add('no-scroll');
     sessionStorage.setItem('abellan-intro-shown', '1');
-    window.requestAnimationFrame(() => overlay.classList.add('intro-rule-in'));
-    const autoHide = window.setTimeout(hideIntro, 2400);
+    window.requestAnimationFrame(() => overlay.classList.add('intro-badge-in'));
+    const closeTimer = window.setTimeout(closeBadges, 2200);
+    const autoHide = window.setTimeout(hideIntro, 3300);
     skipBtn?.addEventListener('click', () => {
+      window.clearTimeout(closeTimer);
       window.clearTimeout(autoHide);
       hideIntro();
     });

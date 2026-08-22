@@ -19,23 +19,46 @@ export const ui = {
     'intro.enter': 'Entrer',
 
     'home.hero.eyebrow': 'Paysagiste concepteur — Occitanie',
-    'home.hero.title': "Des jardins pensés comme des émotions",
+    'home.hero.title': "De l'esquisse à votre jardin de rêve",
     'home.hero.subtitle':
       'Créations paysagères sur mesure en Occitanie et dans les Pyrénées-Orientales.',
     'home.hero.cta1': 'Voir nos réalisations',
     'home.hero.cta2': 'Demander un devis',
 
     'home.intro.eyebrow': "L'atelier",
-    'home.intro.title': 'Chaque jardin raconte une histoire',
+    'home.intro.title': 'Un jardin se dessine avant de se planter',
     'home.intro.text1':
-      "Abellan Paysage imagine et façonne des extérieurs qui prennent le temps d'exister : des jardins où l'architecture, la lumière et le végétal se répondent avec justesse.",
+      "Chaque projet commence par un croquis : un simple trait de crayon pour imaginer ce que le terrain pourrait devenir. C'est là que M. Abellan pose les bases de chaque jardin — volumes, circulations, points de vue — bien avant la première plantation.",
     'home.intro.text2':
-      "De l'esquisse à la dernière plantation, nous accompagnons chaque projet avec la même exigence — qu'il s'agisse d'un patio intimiste ou d'un domaine de plusieurs hectares.",
+      "De cette première esquisse jusqu'à la dernière pierre posée, il conçoit et réalise chaque jardin de A à Z : étude du terrain, dessin, choix des matériaux, sélection des végétaux, suivi du chantier. Une vision unique, portée d'un bout à l'autre du projet.",
     'home.intro.cta': 'Découvrir l\'atelier',
 
     'home.services.eyebrow': 'Savoir-faire',
     'home.services.title': 'Nos prestations',
     'home.services.cta': 'Voir tous les services',
+
+    'home.process.eyebrow': 'Notre méthode',
+    'home.process.title': 'Notre démarche',
+    'home.process.text':
+      "Chaque projet commence par une écoute attentive du lieu et de vos envies, et se construit avec la même exigence à chaque étape — du premier échange jusqu'à la réception du jardin.",
+    'home.process.step1.title': 'Premier échange',
+    'home.process.step1.text':
+      'Un premier échange pour comprendre vos envies, votre terrain et votre façon d\'habiter le jardin.',
+    'home.process.step2.title': 'Visite du terrain',
+    'home.process.step2.text':
+      "Une visite sur place, essentielle pour ressentir la lumière, le sol et l'âme du lieu avant de dessiner quoi que ce soit.",
+    'home.process.step3.title': 'Esquisse & avant-projet',
+    'home.process.step3.text':
+      'Les premiers croquis prennent forme : plan de masse, ambiances, grandes lignes du futur jardin.',
+    'home.process.step4.title': 'Projet définitif',
+    'home.process.step4.text':
+      "L'esquisse s'affine : choix des matériaux, sélection des végétaux, plans techniques détaillés.",
+    'home.process.step5.title': 'Réalisation',
+    'home.process.step5.text':
+      'Coordination des artisans et suivi rigoureux du chantier, du terrassement à la dernière plantation.',
+    'home.process.step6.title': 'Réception & suivi',
+    'home.process.step6.text':
+      "La livraison du jardin, puis des conseils pour l'accompagner et le faire grandir dans le temps.",
 
     'home.projects.eyebrow': 'Réalisations',
     'home.projects.title': 'Nos projets les plus marquants',
@@ -55,9 +78,9 @@ export const ui = {
     'about.eyebrow': 'À propos',
     'about.title': 'Donner une âme à chaque jardin',
     'about.text1':
-      "Abellan Paysage est un atelier de conception paysagère basé en Occitanie. Nous accompagnons particuliers et propriétés d'exception dans la création de jardins sur mesure, du premier croquis jusqu'à la dernière plantation.",
+      "Derrière chaque jardin Abellan Paysage, il y a un croquis. Avant de planter la moindre graine, M. Abellan dessine : les volumes, les perspectives, les jeux d'ombre et de lumière — pour que chaque jardin existe déjà sur le papier avant d'exister dans la terre.",
     'about.text2':
-      "Notre approche est sensible avant d'être technique : comprendre un lieu, sa lumière, son sol, ses usages, pour dessiner un jardin qui semble avoir toujours existé.",
+      "De cette première esquisse jusqu'à la dernière plantation, il conçoit et réalise chaque projet de A à Z : étude du lieu, plans, sélection des matériaux et des végétaux, suivi rigoureux du chantier. Une implication totale, du premier trait de crayon à la réception du jardin.",
     'about.text3':
       "Nous intervenons quotidiennement en Occitanie et dans les Pyrénées-Orientales, et nous déplaçons volontiers là où un projet mérite le voyage.",
     'about.values.title': 'Notre approche',
@@ -167,23 +190,46 @@ export const ui = {
     'intro.enter': 'Enter',
 
     'home.hero.eyebrow': 'Landscape design studio — Occitanie, France',
-    'home.hero.title': 'Gardens conceived as emotions',
+    'home.hero.title': 'From sketch to your dream garden',
     'home.hero.subtitle':
       'Bespoke landscape creations across Occitanie and the Pyrénées-Orientales.',
     'home.hero.cta1': 'View our projects',
     'home.hero.cta2': 'Request a quote',
 
     'home.intro.eyebrow': 'The studio',
-    'home.intro.title': 'Every garden tells a story',
+    'home.intro.title': 'A garden is drawn before it is planted',
     'home.intro.text1':
-      'Abellan Paysage imagines and shapes outdoor spaces built to last — gardens where architecture, light and planting speak the same language.',
+      'Every project starts with a sketch — a single pencil line to imagine what the land could become. This is where Abellan lays the foundations of each garden: volumes, circulation, sightlines — long before the first plant goes into the ground.',
     'home.intro.text2':
-      'From the first sketch to the final planting, every project receives the same care, whether an intimate patio or an estate spanning several hectares.',
+      'From that first sketch to the last stone laid, he designs and builds every garden from start to finish: site study, drawings, material choices, plant selection, on-site supervision. One vision, carried through every stage of the project.',
     'home.intro.cta': 'Discover the studio',
 
     'home.services.eyebrow': 'Expertise',
     'home.services.title': 'Our services',
     'home.services.cta': 'View all services',
+
+    'home.process.eyebrow': 'Our method',
+    'home.process.title': 'Our process',
+    'home.process.text':
+      'Every project begins with careful listening to the place and to you, and is built with the same rigour at every stage — from the first conversation to the garden\'s handover.',
+    'home.process.step1.title': 'First conversation',
+    'home.process.step1.text':
+      'An initial conversation to understand your wishes, your land and how you want to live in your garden.',
+    'home.process.step2.title': 'Site visit',
+    'home.process.step2.text':
+      'An on-site visit, essential to feel the light, the soil and the spirit of the place before drawing anything at all.',
+    'home.process.step3.title': 'Sketch & preliminary design',
+    'home.process.step3.text':
+      'The first sketches take shape: a site plan, moods, the broad lines of the future garden.',
+    'home.process.step4.title': 'Final design',
+    'home.process.step4.text':
+      'The sketch is refined: material choices, plant selection, detailed technical plans.',
+    'home.process.step5.title': 'Construction',
+    'home.process.step5.text':
+      'Coordinating craftsmen and closely supervising the works, from earthworks to the final planting.',
+    'home.process.step6.title': 'Handover & follow-up',
+    'home.process.step6.text':
+      'The garden is handed over, followed by guidance to help it grow and thrive over time.',
 
     'home.projects.eyebrow': 'Projects',
     'home.projects.title': 'A selection of recent gardens',
@@ -201,9 +247,9 @@ export const ui = {
     'about.eyebrow': 'About',
     'about.title': 'Giving every garden a soul',
     'about.text1':
-      'Abellan Paysage is a landscape design studio based in Occitanie, France. We support private clients and exceptional properties in creating bespoke gardens, from the first sketch to the final planting.',
+      'Behind every Abellan Paysage garden, there is a sketch. Before a single seed is planted, Abellan draws: the volumes, the perspectives, the play of shadow and light — so that each garden already exists on paper before it exists in the ground.',
     'about.text2':
-      'Our approach is sensitive before it is technical: understanding a place, its light, its soil, its uses, to design a garden that feels as though it has always been there.',
+      'From that first sketch to the final planting, he designs and builds every project from start to finish: site study, plans, material and plant selection, careful on-site supervision. A complete involvement, from the first pencil line to the garden\'s handover.',
     'about.text3':
       'We work daily across Occitanie and the Pyrénées-Orientales, and travel further whenever a project deserves it.',
     'about.values.title': 'Our approach',
@@ -302,22 +348,45 @@ export const ui = {
     'intro.enter': 'Entrar',
 
     'home.hero.eyebrow': 'Estudio de paisajismo — Occitania, Francia',
-    'home.hero.title': 'Jardines pensados como emociones',
+    'home.hero.title': 'Del boceto a tu jardín soñado',
     'home.hero.subtitle': 'Creaciones paisajísticas a medida en Occitania y los Pirineos Orientales.',
     'home.hero.cta1': 'Ver nuestros proyectos',
     'home.hero.cta2': 'Solicitar presupuesto',
 
     'home.intro.eyebrow': 'El estudio',
-    'home.intro.title': 'Cada jardín cuenta una historia',
+    'home.intro.title': 'Un jardín se dibuja antes de plantarse',
     'home.intro.text1':
-      'Abellan Paysage imagina y crea espacios exteriores hechos para perdurar: jardines donde la arquitectura, la luz y las plantas dialogan con justeza.',
+      'Cada proyecto comienza con un boceto: un simple trazo de lápiz para imaginar en qué podría convertirse el terreno. Ahí es donde Abellan sienta las bases de cada jardín: volúmenes, circulaciones, perspectivas, mucho antes de la primera plantación.',
     'home.intro.text2':
-      'Desde el primer boceto hasta la última plantación, acompañamos cada proyecto con la misma exigencia, ya sea un patio íntimo o una finca de varias hectáreas.',
+      'Desde ese primer boceto hasta la última piedra colocada, diseña y ejecuta cada jardín de principio a fin: estudio del terreno, dibujo, selección de materiales y plantas, seguimiento de obra. Una única visión, presente en cada etapa del proyecto.',
     'home.intro.cta': 'Descubrir el estudio',
 
     'home.services.eyebrow': 'Especialidad',
     'home.services.title': 'Nuestros servicios',
     'home.services.cta': 'Ver todos los servicios',
+
+    'home.process.eyebrow': 'Nuestro método',
+    'home.process.title': 'Nuestro proceso',
+    'home.process.text':
+      'Cada proyecto comienza con una escucha atenta del lugar y de tus deseos, y se construye con el mismo rigor en cada etapa, desde el primer contacto hasta la entrega del jardín.',
+    'home.process.step1.title': 'Primer contacto',
+    'home.process.step1.text':
+      'Un primer intercambio para entender tus deseos, tu terreno y tu forma de habitar el jardín.',
+    'home.process.step2.title': 'Visita al terreno',
+    'home.process.step2.text':
+      'Una visita in situ, esencial para sentir la luz, el suelo y el alma del lugar antes de dibujar nada.',
+    'home.process.step3.title': 'Boceto y anteproyecto',
+    'home.process.step3.text':
+      'Los primeros bocetos toman forma: plano de conjunto, ambientes, las grandes líneas del futuro jardín.',
+    'home.process.step4.title': 'Proyecto definitivo',
+    'home.process.step4.text':
+      'El boceto se perfecciona: selección de materiales y plantas, planos técnicos detallados.',
+    'home.process.step5.title': 'Ejecución',
+    'home.process.step5.text':
+      'Coordinación de los artesanos y seguimiento riguroso de la obra, desde los movimientos de tierra hasta la última plantación.',
+    'home.process.step6.title': 'Entrega y seguimiento',
+    'home.process.step6.text':
+      'La entrega del jardín, seguida de consejos para acompañarlo y verlo crecer con el tiempo.',
 
     'home.projects.eyebrow': 'Proyectos',
     'home.projects.title': 'Una selección de jardines recientes',
@@ -335,9 +404,9 @@ export const ui = {
     'about.eyebrow': 'Nosotros',
     'about.title': 'Dar un alma a cada jardín',
     'about.text1':
-      'Abellan Paysage es un estudio de paisajismo con sede en Occitania, Francia. Acompañamos a particulares y propiedades excepcionales en la creación de jardines a medida, desde el primer boceto hasta la última plantación.',
+      'Detrás de cada jardín de Abellan Paysage hay un boceto. Antes de plantar la primera semilla, Abellan dibuja: los volúmenes, las perspectivas, los juegos de sombra y luz, para que cada jardín exista ya sobre el papel antes de existir en la tierra.',
     'about.text2':
-      'Nuestro enfoque es sensible antes que técnico: entender un lugar, su luz, su suelo, sus usos, para diseñar un jardín que parezca haber existido siempre.',
+      'Desde ese primer boceto hasta la última plantación, diseña y ejecuta cada proyecto de principio a fin: estudio del lugar, planos, selección de materiales y plantas, seguimiento riguroso de la obra. Una implicación total, desde el primer trazo de lápiz hasta la entrega del jardín.',
     'about.text3':
       'Trabajamos a diario en Occitania y los Pirineos Orientales, y nos desplazamos con gusto allí donde un proyecto lo merezca.',
     'about.values.title': 'Nuestro enfoque',

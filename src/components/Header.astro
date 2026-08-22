@@ -22,9 +22,12 @@ const links = [
 
 <header class="fixed top-0 inset-x-0 z-40 bg-cream/90 backdrop-blur-sm border-b border-stone/60">
   <div class="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
-    <a href={localizedPath(lang, 'home')} class="flex flex-col leading-none group">
-      <span class="font-display italic text-2xl text-ink group-hover:text-olive transition-colors">Abellan</span>
-      <span class="text-[0.65rem] tracking-[0.3em] uppercase text-ink-soft mt-0.5">Paysage</span>
+    <a href={localizedPath(lang, 'home')} class="flex items-center group">
+      <img
+        src="/images/brand/logo-abellan.png"
+        alt="Abellan Paysage"
+        class="h-14 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+      />
     </a>
 
     <nav class="hidden lg:flex items-center gap-9">

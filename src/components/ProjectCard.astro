@@ -10,24 +10,31 @@ interface Props {
   cover: string;
   excerpt?: string;
 }
-const { lang, slug, title, location, cover, excerpt } = Astro.props;
+const { lang, slug, title, cover, excerpt } = Astro.props;
 const t = useTranslations(lang);
 const href = `${localizedPath(lang, 'projects')}${slug}/`;
 ---
 
 <a href={href} class="group block border border-stone/60 bg-cream" data-reveal>
-  <div class="aspect-[4/5] overflow-hidden">
+  <div class="relative aspect-[4/5] overflow-hidden">
     <img
       src={cover}
       alt={title}
       loading="lazy"
       class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
     />
+    <div class="absolute inset-0 bg-ink/0 group-hover:bg-ink/55 transition-colors duration-500"></div>
+    <div class="absolute inset-0 flex items-center justify-center px-8 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      <span class="inline-flex flex-col items-center gap-2 font-display italic text-cream text-lg sm:text-xl leading-snug">
+        {title}
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" class="shrink-0 transition-transform duration-500 group-hover:translate-y-1">
+          <path d="M1 8H21M21 8L14.5 1.5M21 8L14.5 14.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    </div>
   </div>
   <div class="p-6">
-    <span class="text-[0.65rem] uppercase tracking-widest text-olive">{location}</span>
-    <h3 class="font-display text-xl mt-2 leading-snug">{title}</h3>
-    {excerpt && <p class="mt-2 text-sm text-ink-soft line-clamp-2">{excerpt}</p>}
+    {excerpt && <p class="text-sm text-ink-soft line-clamp-2">{excerpt}</p>}
     <span class="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-ink group-hover:text-olive transition-colors">
       {t('projects.viewProject')}
       <span class="transition-transform group-hover:translate-x-1">→</span>

@@ -49,14 +49,15 @@ body {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background-color: var(--color-ink);
+  background-color: var(--color-cream);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 1.1s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: opacity 1s ease;
 }
 #intro-overlay.intro-hide {
-  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 #intro-overlay .intro-letter {
   display: inline-block;
@@ -70,13 +71,27 @@ body {
     transform: translateY(0);
   }
 }
-#intro-overlay .intro-rule {
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+#intro-overlay .intro-badge {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
-#intro-overlay.intro-rule-in .intro-rule {
-  transform: scaleX(1);
+#intro-overlay .intro-badge-bottom {
+  transition-delay: 0.25s;
+}
+#intro-overlay.intro-badge-in .intro-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+#intro-overlay .intro-tagline {
+  opacity: 0;
+  transition: opacity 0.8s ease 1.1s;
+}
+#intro-overlay.intro-badge-in .intro-tagline {
+  opacity: 1;
+}
+#intro-overlay.intro-closing .intro-badge {
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .no-scroll {

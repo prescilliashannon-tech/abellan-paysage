@@ -1,0 +1,22 @@
+---
+lang: en
+pageSlug: jardin-sur-gravier
+title: Gravel Garden
+location: Occitanie
+category: terraces
+cover: /images/projects/jardin-gravier/image00022.jpeg
+images:
+  - /images/projects/jardin-gravier/image00022.jpeg
+  - /images/projects/jardin-gravier/image00031.jpeg
+  - /images/projects/jardin-gravier/image00020.jpeg
+  - /images/projects/jardin-gravier/image00021.jpeg
+  - /images/projects/jardin-gravier/image00029.jpeg
+excerpt: A contemporary, mineral garden, where raw timber planks cross pale gravel toward the pool, beneath a century-old olive tree.
+order: 2
+---
+
+On this recently built plot, the challenge was to dress a still-bare exterior without losing the house's contemporary architectural line. Our approach: a dry, mineral garden, restrained, where every plant carries twice the weight.
+
+A path of raw timber planks, laid directly onto pale gravel, winds beneath a rough-timber pergola toward the pool. An old olive tree, preserved and showcased at the centre of the space, anchors the garden and gives it presence from day one, without waiting for the rest of the planting to fill in.
+
+Column-shaped cypress, grasses and Mediterranean shrubs punctuate the gravel in careful touches, in a resolutely pared-back design — a garden that lets the architecture breathe rather than covering it.
