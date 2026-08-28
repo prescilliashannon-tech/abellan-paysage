@@ -14,12 +14,12 @@ const allProjects = await getCollection('projects', ({ data }) => data.lang === 
 const featuredProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
 
 const processImages = [
-  '/images/placeholders/bougainvillier-mur.jpg',
-  '/images/placeholders/terrasse-pierre.jpg',
-  '/images/placeholders/allee-jardin.jpg',
-  '/images/placeholders/mur-pierre-vegetal.jpg',
-  '/images/placeholders/cour-oleandre.jpg',
-  '/images/placeholders/jardin-mediterraneen.jpg'
+  '/images/process/step1-echange.jpg',
+  '/images/process/step2-visite.jpg',
+  '/images/process/step3-esquisse.jpg',
+  '/images/process/step4-projet.jpg',
+  '/images/process/step5-realisation.jpg',
+  '/images/projects/jardin-lupia/image00017.jpeg'
 ];
 
 const steps = [1, 2, 3, 4, 5, 6].map((n) => ({
@@ -32,7 +32,7 @@ const steps = [1, 2, 3, 4, 5, 6].map((n) => ({
 <Layout lang={lang} routeKey="home" showIntro={true}>
   <!-- Hero -->
   <section class="pb-8 sm:pb-10">
-    <div class="w-full aspect-[21/9] overflow-hidden" data-reveal>
+    <div class="w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] overflow-hidden" data-reveal>
       <img
         src="/images/projects/mas-catalan/image00011.jpeg"
         alt=""
@@ -42,7 +42,7 @@ const steps = [1, 2, 3, 4, 5, 6].map((n) => ({
     </div>
     <div class="mt-10 sm:mt-14 mx-auto max-w-7xl px-6 lg:px-10" data-reveal>
       <div class="max-w-2xl">
-        <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">{t('home.hero.title')}</h1>
+        <h1 class="font-displaytext-3xl sm:text-4xl lg:text-5xl leading-tight">{t('home.hero.title')}</h1>
         <p class="mt-6 text-ink-soft leading-relaxed max-w-xl">{t('home.hero.subtitle')}</p>
         <a
           href={localizedPath(lang, 'contact')}
@@ -56,48 +56,87 @@ const steps = [1, 2, 3, 4, 5, 6].map((n) => ({
   </section>
 
   <!-- Intro / About teaser -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[#EEF1E3]"></div>
-    <div class="relative mx-auto max-w-7xl px-6 lg:px-10 pt-10 pb-24 lg:pt-14 lg:pb-32 grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-20 items-center">
-      <div data-reveal>
-        <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.intro.eyebrow')}</p>
-        <h2 class="font-display text-3xl sm:text-4xl leading-tight max-w-lg">{t('home.intro.title')}</h2>
-        <p class="mt-6 text-ink-soft leading-relaxed max-w-lg">{t('home.intro.text1')}</p>
-        <p class="mt-4 text-ink-soft leading-relaxed max-w-lg">{t('home.intro.text2')}</p>
-        <a
-          href={localizedPath(lang, 'about')}
-          class="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-ink border-b border-ink pb-1 hover:text-olive hover:border-olive transition-colors"
-        >
-          {t('home.intro.cta')} →
-        </a>
-      </div>
-      <div class="relative max-w-sm mx-auto lg:mx-0 lg:ml-auto mt-10 lg:mt-0" data-reveal>
-        <div class="aspect-[3/4] overflow-hidden">
-          <img
-            src="/images/projects/jardin-lupia/image00014.jpeg"
-            alt=""
-            class="h-full w-full object-cover"
-            loading="lazy"
-          />
-        </div>
-        <div class="absolute -top-8 -left-6 sm:-top-10 sm:-left-10 w-28 sm:w-36 aspect-[4/3] overflow-hidden border-[3px] border-cream shadow-xl">
-          <img
-            src="/images/sketch/croquis-plan-main.jpg"
-            alt=""
-            class="h-full w-full object-cover"
-            loading="lazy"
-          />
-        </div>
-      </div>
+  <section class="mx-auto max-w-7xl px-6 lg:px-10 pt-10 pb-24 lg:pt-14 lg:pb-32 grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-20 items-center">
+    <div data-reveal>
+      <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.intro.eyebrow')}</p>
+      <h2 class="font-displaytext-3xl sm:text-4xl leading-tight max-w-lg">{t('home.intro.title')}</h2>
+      <p class="mt-6 text-ink-soft leading-relaxed max-w-lg">{t('home.intro.text1')}</p>
+      <p class="mt-4 text-ink-soft leading-relaxed max-w-lg">{t('home.intro.text2')}</p>
+      <a
+        href={localizedPath(lang, 'about')}
+        class="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-ink border-b border-ink pb-1 hover:text-olive hover:border-olive transition-colors"
+      >
+        {t('home.intro.cta')} →
+      </a>
+    </div>
+    <div class="relative w-full aspect-[4/3] overflow-hidden mt-10 lg:mt-0" data-reveal id="atelier-carousel">
+      {[
+        '/images/sketch/croquis-plan-main.jpg',
+        '/images/projects/jardin-lupia/image00014.jpeg',
+        '/images/projects/mas-catalan/image00001.jpeg',
+        '/images/projects/jardin-gravier/image00022.jpeg'
+      ].map((src, i) => (
+        <img
+          src={src}
+          alt=""
+          loading="lazy"
+          class="atelier-slide absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
+          style={`opacity:${i === 0 ? 1 : 0}`}
+        />
+      ))}
+      <button
+        id="atelier-prev"
+        aria-label="Image précédente"
+        class="absolute bottom-4 right-14 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-cream/70 text-cream hover:bg-cream hover:text-ink transition-colors"
+      >
+        ‹
+      </button>
+      <button
+        id="atelier-next"
+        aria-label="Image suivante"
+        class="absolute bottom-4 right-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-cream/70 text-cream hover:bg-cream hover:text-ink transition-colors"
+      >
+        ›
+      </button>
     </div>
   </section>
 
+  <script>
+    (function () {
+      const root = document.getElementById('atelier-carousel');
+      if (!root) return;
+      const slides = Array.from(root.querySelectorAll<HTMLImageElement>('.atelier-slide'));
+      let index = 0;
+      let timer: ReturnType<typeof setInterval>;
+
+      function show(next: number) {
+        slides[index].style.opacity = '0';
+        index = (next + slides.length) % slides.length;
+        slides[index].style.opacity = '1';
+      }
+      function restart() {
+        clearInterval(timer);
+        timer = setInterval(() => show(index + 1), 4500);
+      }
+
+      root.querySelector('#atelier-prev')?.addEventListener('click', () => {
+        show(index - 1);
+        restart();
+      });
+      root.querySelector('#atelier-next')?.addEventListener('click', () => {
+        show(index + 1);
+        restart();
+      });
+      restart();
+    })();
+  </script>
+
   <!-- Notre démarche -->
-  <section class="bg-cream-dark py-24 lg:py-32">
+  <section class="bg-cream py-24 lg:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-10 lg:flex lg:items-start lg:gap-16">
       <div class="lg:sticky lg:top-28 lg:w-[30%] lg:shrink-0" data-reveal>
         <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.process.eyebrow')}</p>
-        <h2 class="font-display text-3xl sm:text-4xl">{t('home.process.title')}</h2>
+        <h2 class="font-displaytext-3xl sm:text-4xl">{t('home.process.title')}</h2>
         <p class="mt-6 text-ink-soft leading-relaxed max-w-sm">{t('home.process.text')}</p>
       </div>
 
@@ -109,7 +148,7 @@ const steps = [1, 2, 3, 4, 5, 6].map((n) => ({
           >
             <div class="flex-1">
               <span class="text-xs text-olive tracking-widest">{String(i + 1).padStart(2, '0')}</span>
-              <h3 class="font-display text-2xl sm:text-3xl mt-3">{step.title}</h3>
+              <h3 class="font-displaytext-2xl sm:text-3xl mt-3">{step.title}</h3>
               <p class="mt-4 text-ink-soft leading-relaxed max-w-md">{step.text}</p>
             </div>
             <div class="w-full sm:w-56 md:w-64 shrink-0 aspect-[4/3] overflow-hidden">
@@ -125,7 +164,7 @@ const steps = [1, 2, 3, 4, 5, 6].map((n) => ({
   <section class="py-24 lg:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-10 mb-14" data-reveal>
       <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.projects.eyebrow')}</p>
-      <h2 class="font-display text-3xl sm:text-4xl max-w-xl">{t('home.projects.title')}</h2>
+      <h2 class="font-displaytext-3xl sm:text-4xl max-w-xl">{t('home.projects.title')}</h2>
       <p class="mt-4 text-ink-soft max-w-lg">{t('home.projects.text')}</p>
     </div>
 
@@ -138,7 +177,7 @@ const steps = [1, 2, 3, 4, 5, 6].map((n) => ({
           data-reveal
         >
           <div class="mx-auto max-w-7xl w-full px-6 lg:px-10 py-6 flex items-center justify-between gap-6 shrink-0 bg-cream">
-            <h3 class="font-display text-2xl sm:text-3xl group-hover:text-olive transition-colors">
+            <h3 class="font-displaytext-2xl sm:text-3xl group-hover:text-olive transition-colors">
               {project.data.title}
             </h3>
             <span class="text-2xl text-olive shrink-0 transition-transform duration-500 group-hover:rotate-45">+</span>
@@ -178,7 +217,7 @@ const steps = [1, 2, 3, 4, 5, 6].map((n) => ({
       class="relative z-10 mx-6 max-w-lg border border-cream/80 px-6 py-9 sm:px-10 sm:py-10 text-center"
       data-reveal
     >
-      <h2 class="font-display text-cream text-2xl sm:text-3xl leading-tight">{t('home.cta.title')}</h2>
+      <h2 class="font-displaytext-cream text-2xl sm:text-3xl leading-tight">{t('home.cta.title')}</h2>
       <p class="mt-4 text-cream/85 text-sm max-w-sm mx-auto">{t('home.cta.text')}</p>
       <a
         href={localizedPath(lang, 'contact')}

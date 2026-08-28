@@ -12,12 +12,12 @@ images:
   - /images/projects/mas-catalan/image00002.jpeg
   - /images/projects/mas-catalan/image00004.jpeg
   - /images/projects/mas-catalan/image00010.jpeg
-excerpt: A stone Catalan farmhouse where an avenue of agapanthus leads to the door, and the pool nestles against a dense green wall.
+excerpt: A pocket of Mediterranean greenery tucked into a stone Catalan farmhouse, where an avenue of agapanthus leads to the door and the pool nestles against a dense green wall.
 order: 1
 ---
 
-This Catalan mas, with its time-worn stone walls and dark shutters, called for a garden equal to its character. The entrance path had to tell the story of the house before you even reached it.
+This Catalan mas, with its time-worn stone walls and dark shutters, called for a Mediterranean, naturalistic garden equal to its character. The entrance path had to tell the story of the house before you even reached it.
 
-A stone pathway now cuts through a dense border of blue agapanthus, planted in broad bands on either side, guiding the eye toward the old door. Around the pool, grasses, santolina and Mediterranean shrubs form a generous yet never cluttered garden, where every planting bed can breathe.
+A stone pathway now cuts through a dense border of blue agapanthus, planted in broad bands on either side, guiding the eye toward the old door. Around the pool, grasses, santolina and Mediterranean shrubs form a lush green pocket, generous yet never cluttered, where every planting bed can breathe.
 
-The garden closes on a bed of pebbles and large stones, a nod to the rivers that cross Roussillon, softened by a border of Mediterranean lawn grass along the terrace.
+The garden closes on a bed of pebbles and large stones, a nod to the rivers that cross Roussillon, before easing gradually into a natural meadow at the edge of the plot, softened by a border of Mediterranean lawn grass along the terrace.

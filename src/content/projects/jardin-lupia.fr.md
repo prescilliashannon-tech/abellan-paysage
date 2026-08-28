@@ -11,11 +11,11 @@ images:
   - /images/projects/jardin-lupia/image00013.jpeg
   - /images/projects/jardin-lupia/image00017.jpeg
   - /images/projects/jardin-lupia/image00016.jpeg
-excerpt: Un jardin naturaliste où de gros rochers et des cyprès en colonne accompagnent un coin lecture niché contre le mur de la maison.
+excerpt: Un écrin naturaliste et méditerranéen où de gros rochers et des cyprès en colonne accompagnent un coin lecture niché contre le mur de la maison.
 order: 3
 ---
 
-Ici, le jardin devait avant tout offrir un lieu pour s'arrêter. Un coin où s'installer quelques minutes, à l'abri du regard, entre la pelouse et le mur de la maison.
+Ici, le jardin devait avant tout offrir un lieu pour s'arrêter — une parenthèse végétale, à l'abri du regard, entre la pelouse et le mur de la maison.
 
 De gros rochers, disposés comme s'ils avaient toujours été là, structurent les plantations basses — santolines, achillées, graminées — le long d'un cheminement de gravier qui longe la façade. Un fauteuil suspendu en fibre naturelle, niché entre deux cyprès en colonne, referme la scène et invite à s'y attarder.
 
