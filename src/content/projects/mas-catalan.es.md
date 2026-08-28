@@ -18,6 +18,6 @@ order: 1
 
 Este mas catalán, con sus muros de piedra pátinados por el tiempo y sus postigos oscuros, pedía un jardín mediterráneo y naturalista a la altura de su carácter. El camino de entrada debía contar la historia de la casa incluso antes de llegar a ella.
 
-Un camino empedrado atraviesa hoy un macizo denso de agapantos azules, plantados en amplias franjas a ambos lados, que acompañan la mirada hasta la puerta antigua. Alrededor de la piscina, gramíneas, santolinas y arbustos mediterráneos dibujan una burbuja vegetal generosa pero nunca desordenada, donde cada macizo respira.
+Un camino empedrado atraviesa hoy un macizo denso de agapantos azules, plantados en amplias franjas a ambos lados, que acompañan la mirada hasta la puerta antigua. Alrededor de la piscina, romero y santolinas podados en bola, arbustos mediterráneos y un ciprés esbelto dibujan una burbuja vegetal generosa pero nunca desordenada, donde cada macizo respira.
 
-El jardín se cierra sobre un lecho de guijarros y grandes piedras, un guiño a los ríos que atraviesan el Rosellón, antes de fundirse poco a poco en una pradera natural al borde de la parcela, suavizado por un borde de césped mediterráneo a lo largo de la terraza.
+El jardín se cierra sobre un lecho de guijarros y grandes piedras, como un río seco, antes de fundirse poco a poco en una pradera natural al borde de la parcela, suavizado por un borde de césped mediterráneo a lo largo de la terraza.

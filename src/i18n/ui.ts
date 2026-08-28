@@ -28,9 +28,9 @@ export const ui = {
     'home.intro.eyebrow': "L'atelier",
     'home.intro.title': 'Un jardin se dessine avant de se planter',
     'home.intro.text1':
-      "Chaque projet commence par un croquis : un simple trait de crayon pour imaginer ce que le terrain pourrait devenir. C'est là que M. Abellan pose les bases de chaque jardin — volumes, circulations, points de vue — bien avant la première plantation.",
+      "Chaque projet commence par un croquis : un simple trait de crayon pour imaginer ce que le terrain pourrait devenir. C'est là que nous posons les bases de chaque jardin — volumes, circulations, points de vue — bien avant la première plantation.",
     'home.intro.text2':
-      "De cette première esquisse jusqu'à la dernière pierre posée, il conçoit et réalise chaque jardin de A à Z : étude du terrain, dessin, choix des matériaux, sélection des végétaux, suivi du chantier. Une vision unique, portée d'un bout à l'autre du projet.",
+      "De cette première esquisse jusqu'à la dernière pierre posée, nous concevons et réalisons chaque jardin de A à Z : étude du terrain, dessin, choix des matériaux, sélection des végétaux, suivi du chantier. Une vision unique, portée d'un bout à l'autre du projet.",
     'home.intro.cta': 'Découvrir l\'atelier',
 
     'home.services.eyebrow': 'Savoir-faire',
@@ -78,9 +78,9 @@ export const ui = {
     'about.eyebrow': 'À propos',
     'about.title': 'Donner une âme à chaque jardin',
     'about.text1':
-      "Derrière chaque jardin Abellan Paysage, il y a un croquis. Avant de planter la moindre graine, M. Abellan dessine : les volumes, les perspectives, les jeux d'ombre et de lumière — pour que chaque jardin existe déjà sur le papier avant d'exister dans la terre.",
+      "Derrière chaque jardin Abellan Paysage, il y a un croquis. Avant de planter la moindre graine, nous dessinons : les volumes, les perspectives, les jeux d'ombre et de lumière — pour que chaque jardin existe déjà sur le papier avant d'exister dans la terre.",
     'about.text2':
-      "De cette première esquisse jusqu'à la dernière plantation, il conçoit et réalise chaque projet de A à Z : étude du lieu, plans, sélection des matériaux et des végétaux, suivi rigoureux du chantier. Une implication totale, du premier trait de crayon à la réception du jardin.",
+      "De cette première esquisse jusqu'à la dernière plantation, nous concevons et réalisons chaque projet de A à Z : étude du lieu, plans, sélection des matériaux et des végétaux, suivi rigoureux du chantier. Une implication totale, du premier trait de crayon à la réception du jardin.",
     'about.text3':
       "Nous intervenons quotidiennement en Occitanie et dans les Pyrénées-Orientales, et nous déplaçons volontiers là où un projet mérite le voyage.",
     'about.values.title': 'Notre approche',
@@ -199,9 +199,9 @@ export const ui = {
     'home.intro.eyebrow': 'The studio',
     'home.intro.title': 'A garden is drawn before it is planted',
     'home.intro.text1':
-      'Every project starts with a sketch — a single pencil line to imagine what the land could become. This is where Abellan lays the foundations of each garden: volumes, circulation, sightlines — long before the first plant goes into the ground.',
+      'Every project starts with a sketch — a single pencil line to imagine what the land could become. This is where we lay the foundations of each garden: volumes, circulation, sightlines — long before the first plant goes into the ground.',
     'home.intro.text2':
-      'From that first sketch to the last stone laid, he designs and builds every garden from start to finish: site study, drawings, material choices, plant selection, on-site supervision. One vision, carried through every stage of the project.',
+      'From that first sketch to the last stone laid, we design and build every garden from start to finish: site study, drawings, material choices, plant selection, on-site supervision. One vision, carried through every stage of the project.',
     'home.intro.cta': 'Discover the studio',
 
     'home.services.eyebrow': 'Expertise',
@@ -247,9 +247,9 @@ export const ui = {
     'about.eyebrow': 'About',
     'about.title': 'Giving every garden a soul',
     'about.text1':
-      'Behind every Abellan Paysage garden, there is a sketch. Before a single seed is planted, Abellan draws: the volumes, the perspectives, the play of shadow and light — so that each garden already exists on paper before it exists in the ground.',
+      'Behind every Abellan Paysage garden, there is a sketch. Before a single seed is planted, we draw: the volumes, the perspectives, the play of shadow and light — so that each garden already exists on paper before it exists in the ground.',
     'about.text2':
-      'From that first sketch to the final planting, he designs and builds every project from start to finish: site study, plans, material and plant selection, careful on-site supervision. A complete involvement, from the first pencil line to the garden\'s handover.',
+      'From that first sketch to the final planting, we design and build every project from start to finish: site study, plans, material and plant selection, careful on-site supervision. A complete involvement, from the first pencil line to the garden\'s handover.',
     'about.text3':
       'We work daily across Occitanie and the Pyrénées-Orientales, and travel further whenever a project deserves it.',
     'about.values.title': 'Our approach',
@@ -356,9 +356,9 @@ export const ui = {
     'home.intro.eyebrow': 'El estudio',
     'home.intro.title': 'Un jardín se dibuja antes de plantarse',
     'home.intro.text1':
-      'Cada proyecto comienza con un boceto: un simple trazo de lápiz para imaginar en qué podría convertirse el terreno. Ahí es donde Abellan sienta las bases de cada jardín: volúmenes, circulaciones, perspectivas, mucho antes de la primera plantación.',
+      'Cada proyecto comienza con un boceto: un simple trazo de lápiz para imaginar en qué podría convertirse el terreno. Ahí es donde sentamos las bases de cada jardín: volúmenes, circulaciones, perspectivas, mucho antes de la primera plantación.',
     'home.intro.text2':
-      'Desde ese primer boceto hasta la última piedra colocada, diseña y ejecuta cada jardín de principio a fin: estudio del terreno, dibujo, selección de materiales y plantas, seguimiento de obra. Una única visión, presente en cada etapa del proyecto.',
+      'Desde ese primer boceto hasta la última piedra colocada, diseñamos y ejecutamos cada jardín de principio a fin: estudio del terreno, dibujo, selección de materiales y plantas, seguimiento de obra. Una única visión, presente en cada etapa del proyecto.',
     'home.intro.cta': 'Descubrir el estudio',
 
     'home.services.eyebrow': 'Especialidad',
@@ -404,9 +404,9 @@ export const ui = {
     'about.eyebrow': 'Nosotros',
     'about.title': 'Dar un alma a cada jardín',
     'about.text1':
-      'Detrás de cada jardín de Abellan Paysage hay un boceto. Antes de plantar la primera semilla, Abellan dibuja: los volúmenes, las perspectivas, los juegos de sombra y luz, para que cada jardín exista ya sobre el papel antes de existir en la tierra.',
+      'Detrás de cada jardín de Abellan Paysage hay un boceto. Antes de plantar la primera semilla, dibujamos: los volúmenes, las perspectivas, los juegos de sombra y luz, para que cada jardín exista ya sobre el papel antes de existir en la tierra.',
     'about.text2':
-      'Desde ese primer boceto hasta la última plantación, diseña y ejecuta cada proyecto de principio a fin: estudio del lugar, planos, selección de materiales y plantas, seguimiento riguroso de la obra. Una implicación total, desde el primer trazo de lápiz hasta la entrega del jardín.',
+      'Desde ese primer boceto hasta la última plantación, diseñamos y ejecutamos cada proyecto de principio a fin: estudio del lugar, planos, selección de materiales y plantas, seguimiento riguroso de la obra. Una implicación total, desde el primer trazo de lápiz hasta la entrega del jardín.',
     'about.text3':
       'Trabajamos a diario en Occitania y los Pirineos Orientales, y nos desplazamos con gusto allí donde un proyecto lo merezca.',
     'about.values.title': 'Nuestro enfoque',

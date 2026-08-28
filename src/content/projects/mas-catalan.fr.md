@@ -18,6 +18,6 @@ order: 1
 
 Ce mas catalan, avec ses murs de pierre patinés par le temps et ses volets sombres, appelait un jardin méditerranéen et naturaliste à la hauteur de son caractère. L'allée d'entrée devait raconter la maison avant même d'y arriver.
 
-Une allée dallée traverse aujourd'hui un massif dense d'agapanthes bleues, plantées en larges bandes de part et d'autre, qui accompagnent le regard jusqu'à la porte ancienne. Autour de la piscine, graminées, santolines et arbustes méditerranéens dessinent une bulle végétale généreuse mais jamais désordonnée, où chaque massif respire.
+Une allée dallée traverse aujourd'hui un massif dense d'agapanthes bleues, plantées en larges bandes de part et d'autre, qui accompagnent le regard jusqu'à la porte ancienne. Autour de la piscine, romarin et santolines taillés en boules, arbustes méditerranéens et un cyprès élancé dessinent une bulle végétale généreuse mais jamais désordonnée, où chaque massif respire.
 
-Le jardin se referme sur un lit de galets et de grosses pierres, clin d'œil aux rivières qui traversent le Roussillon, avant de se fondre progressivement vers une prairie naturelle en lisière de parcelle, adoucie par une bordure de gazon japonais qui atténue la minéralité de la terrasse.
+Le jardin se referme sur un lit de galets et de grosses pierres, comme une rivière asséchée, avant de se fondre progressivement vers une prairie naturelle en lisière de parcelle, adoucie par une bordure de gazon japonais qui atténue la minéralité de la terrasse.

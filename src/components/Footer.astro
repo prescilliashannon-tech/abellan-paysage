@@ -30,7 +30,29 @@ const links = [
         </div>
         <p class="mt-4 max-w-sm text-right text-cream/70 text-sm leading-relaxed">{t('footer.tagline')}</p>
       </div>
-      <div class="mt-6 flex items-center gap-4">
+    </div>
+
+    <div>
+      <h3 class="text-xs uppercase tracking-widest text-cream/50 mb-4">{t('footer.nav.title')}</h3>
+      <ul class="grid grid-cols-2 gap-x-4 gap-y-2 sm:block sm:space-y-2">
+        {links.map((link) => (
+          <li>
+            <a href={localizedPath(lang, link.key)} class="text-sm text-cream/85 hover:text-cream transition-colors">
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs uppercase tracking-widest text-cream/50 mb-4">{t('footer.contact.title')}</h3>
+      <ul class="space-y-2 text-sm text-cream/85">
+        <li>Occitanie &amp; Pyrénées-Orientales</li>
+        <li><a href="mailto:abellan.paysage@gmail.com" class="hover:text-cream transition-colors">abellan.paysage@gmail.com</a></li>
+        <li>Abellan Paysage</li>
+      </ul>
+      <div class="mt-6 flex items-center justify-end gap-4">
         <a
           href={SOCIAL_LINKS.instagram}
           target="_blank"
@@ -56,28 +78,6 @@ const links = [
           </svg>
         </a>
       </div>
-    </div>
-
-    <div>
-      <h3 class="text-xs uppercase tracking-widest text-cream/50 mb-4">{t('footer.nav.title')}</h3>
-      <ul class="grid grid-cols-2 gap-x-4 gap-y-2 sm:block sm:space-y-2">
-        {links.map((link) => (
-          <li>
-            <a href={localizedPath(lang, link.key)} class="text-sm text-cream/85 hover:text-cream transition-colors">
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-xs uppercase tracking-widest text-cream/50 mb-4">{t('footer.contact.title')}</h3>
-      <ul class="space-y-2 text-sm text-cream/85">
-        <li>Occitanie &amp; Pyrénées-Orientales</li>
-        <li><a href="mailto:abellan.paysage@gmail.com" class="hover:text-cream transition-colors">abellan.paysage@gmail.com</a></li>
-        <li>Abellan Paysage</li>
-      </ul>
     </div>
   </div>
   <div class="border-t border-cream/10">
