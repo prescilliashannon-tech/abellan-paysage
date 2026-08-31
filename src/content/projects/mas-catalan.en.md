@@ -8,8 +8,10 @@ cover: /images/projects/mas-catalan/image00001.jpeg
 images:
   - /images/projects/mas-catalan/image00001.jpeg
   - /images/projects/mas-catalan/image00011.jpeg
-  - /images/projects/mas-catalan/image00009.jpeg
+  - /images/projects/mas-catalan/image00003.jpeg
   - /images/projects/mas-catalan/image00002.jpeg
+  - /images/projects/mas-catalan/image00009.jpeg
+  - /images/projects/mas-catalan/image00005.jpeg
   - /images/projects/mas-catalan/image00004.jpeg
   - /images/projects/mas-catalan/image00010.jpeg
 excerpt: A pocket of Mediterranean greenery tucked into a stone Catalan farmhouse, where an avenue of agapanthus leads to the door and the pool nestles against a dense green wall.

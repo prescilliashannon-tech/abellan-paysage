@@ -35,8 +35,8 @@ const services = [
       {services.map((service, i) => (
         <div class="bg-cream p-8 lg:p-10" data-reveal>
           <span class="text-xs text-olive tracking-widest">{String(i + 1).padStart(2, '0')}</span>
-          <h2 class="font-display text-xl mt-3 mb-3">{service.title}</h2>
-          <p class="text-sm text-ink-soft leading-relaxed">{service.text}</p>
+          <h2 class="font-display text-2xl font-bold mt-3 mb-3">{service.title}</h2>
+          <p class="text-base text-ink-soft leading-relaxed">{service.text}</p>
         </div>
       ))}
     </div>

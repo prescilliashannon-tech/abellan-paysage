@@ -11,6 +11,7 @@ images:
   - /images/projects/jardin-lupia/image00013.jpeg
   - /images/projects/jardin-lupia/image00017.jpeg
   - /images/projects/jardin-lupia/image00016.jpeg
+  - /images/projects/jardin-lupia/image00018.jpeg
 excerpt: Un écrin naturaliste et méditerranéen où de gros rochers et des cyprès en colonne accompagnent un coin lecture niché contre le mur de la maison.
 order: 3
 ---

@@ -11,6 +11,7 @@ images:
   - /images/projects/jardin-lupia/image00013.jpeg
   - /images/projects/jardin-lupia/image00017.jpeg
   - /images/projects/jardin-lupia/image00016.jpeg
+  - /images/projects/jardin-lupia/image00018.jpeg
 excerpt: Un rincón naturalista y mediterráneo donde grandes rocas y cipreses en columna enmarcan un rincón de lectura junto al muro de la casa.
 order: 3
 ---

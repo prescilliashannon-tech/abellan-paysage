@@ -8,8 +8,10 @@ cover: /images/projects/mas-catalan/image00001.jpeg
 images:
   - /images/projects/mas-catalan/image00001.jpeg
   - /images/projects/mas-catalan/image00011.jpeg
-  - /images/projects/mas-catalan/image00009.jpeg
+  - /images/projects/mas-catalan/image00003.jpeg
   - /images/projects/mas-catalan/image00002.jpeg
+  - /images/projects/mas-catalan/image00009.jpeg
+  - /images/projects/mas-catalan/image00005.jpeg
   - /images/projects/mas-catalan/image00004.jpeg
   - /images/projects/mas-catalan/image00010.jpeg
 excerpt: Una burbuja vegetal mediterránea instalada en un mas catalán de piedra, donde una avenida de agapantos conduce hasta la puerta y la piscina se acurruca junto a un muro vegetal denso.

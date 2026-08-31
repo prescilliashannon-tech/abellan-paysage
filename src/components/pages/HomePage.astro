@@ -14,11 +14,11 @@ const allProjects = await getCollection('projects', ({ data }) => data.lang === 
 const featuredProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
 
 const processImages = [
-  '/images/process/step1-echange.jpg',
-  '/images/process/step2-visite.jpg',
+  '/images/projects/jardin-gravier/image00021-olivier.jpeg',
+  '/images/projects/jardin-lupia/image00019.jpeg',
   '/images/process/step3-esquisse.jpg',
-  '/images/process/step4-projet.jpg',
-  '/images/process/step5-realisation.jpg',
+  '/images/process/pexels-shkrabaanthony-5244002.jpg',
+  '/images/projects/mas-catalan/image00010.jpeg',
   '/images/projects/jardin-lupia/image00017.jpeg'
 ];
 
@@ -132,12 +132,15 @@ const steps = [1, 2, 3, 4, 5, 6].map((n) => ({
   </script>
 
   <!-- Notre démarche -->
-  <section class="bg-cream py-24 lg:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-10 lg:flex lg:items-start lg:gap-16">
-      <div class="lg:sticky lg:top-28 lg:w-[30%] lg:shrink-0" data-reveal>
-        <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.process.eyebrow')}</p>
-        <h2 class="font-display text-3xl sm:text-4xl">{t('home.process.title')}</h2>
-        <p class="mt-6 text-ink-soft leading-relaxed max-w-sm">{t('home.process.text')}</p>
+  <section class="relative bg-cream py-24 lg:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10 lg:flex lg:items-stretch lg:gap-16">
+      <div class="relative lg:w-[30%] lg:shrink-0 -mx-8 lg:-mx-10 px-8 lg:px-10">
+        <div class="absolute inset-y-0 right-0 w-screen" style="background-color: #eaece3;"></div>
+        <div class="relative lg:sticky lg:top-28 py-8 lg:py-10" data-reveal>
+          <p class="text-xs uppercase tracking-[0.3em] text-olive mb-4">{t('home.process.eyebrow')}</p>
+          <h2 class="font-display text-3xl sm:text-4xl">{t('home.process.title')}</h2>
+          <p class="mt-6 text-ink-soft leading-relaxed max-w-sm">{t('home.process.text')}</p>
+        </div>
       </div>
 
       <div class="mt-16 lg:mt-0 lg:flex-1 border-t border-stone/60">

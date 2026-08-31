@@ -8,8 +8,10 @@ cover: /images/projects/mas-catalan/image00001.jpeg
 images:
   - /images/projects/mas-catalan/image00001.jpeg
   - /images/projects/mas-catalan/image00011.jpeg
-  - /images/projects/mas-catalan/image00009.jpeg
+  - /images/projects/mas-catalan/image00003.jpeg
   - /images/projects/mas-catalan/image00002.jpeg
+  - /images/projects/mas-catalan/image00009.jpeg
+  - /images/projects/mas-catalan/image00005.jpeg
   - /images/projects/mas-catalan/image00004.jpeg
   - /images/projects/mas-catalan/image00010.jpeg
 excerpt: Une bulle végétale méditerranéenne nichée dans un mas catalan de pierre, où l'allée d'agapanthes mène jusqu'au seuil et la piscine se love contre un mur végétal dense.

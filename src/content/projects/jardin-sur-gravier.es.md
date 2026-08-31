@@ -7,9 +7,14 @@ category: terraces
 cover: /images/projects/jardin-gravier/image00022.jpeg
 images:
   - /images/projects/jardin-gravier/image00022.jpeg
+  - /images/projects/jardin-gravier/image00023.jpeg
+  - /images/projects/jardin-gravier/image00030.jpeg
   - /images/projects/jardin-gravier/image00031.jpeg
+  - /images/projects/jardin-gravier/image00024.jpeg
   - /images/projects/jardin-gravier/image00020.jpeg
   - /images/projects/jardin-gravier/image00021.jpeg
+  - /images/projects/jardin-gravier/image00028.jpeg
+  - /images/projects/jardin-gravier/image00027.jpeg
   - /images/projects/jardin-gravier/image00029.jpeg
 excerpt: Un jardín mediterráneo y contemporáneo, todo mineral, donde tablones de madera bruta atraviesan la grava clara hasta la mesa dispuesta bajo la pérgola, bajo un olivo centenario.
 order: 2

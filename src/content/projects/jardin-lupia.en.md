@@ -11,6 +11,7 @@ images:
   - /images/projects/jardin-lupia/image00013.jpeg
   - /images/projects/jardin-lupia/image00017.jpeg
   - /images/projects/jardin-lupia/image00016.jpeg
+  - /images/projects/jardin-lupia/image00018.jpeg
 excerpt: A naturalistic, Mediterranean pocket of green where large boulders and column-shaped cypress frame a reading nook tucked against the house wall.
 order: 3
 ---

@@ -7,9 +7,14 @@ category: terraces
 cover: /images/projects/jardin-gravier/image00022.jpeg
 images:
   - /images/projects/jardin-gravier/image00022.jpeg
+  - /images/projects/jardin-gravier/image00023.jpeg
+  - /images/projects/jardin-gravier/image00030.jpeg
   - /images/projects/jardin-gravier/image00031.jpeg
+  - /images/projects/jardin-gravier/image00024.jpeg
   - /images/projects/jardin-gravier/image00020.jpeg
   - /images/projects/jardin-gravier/image00021.jpeg
+  - /images/projects/jardin-gravier/image00028.jpeg
+  - /images/projects/jardin-gravier/image00027.jpeg
   - /images/projects/jardin-gravier/image00029.jpeg
 excerpt: Un jardin méditerranéen contemporain tout en minéral, où des lames de bois brut traversent le gravier clair jusqu'à la table dressée sous la pergola, sous un olivier centenaire.
 order: 2
