@@ -2,10 +2,12 @@
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://abellan-paysagiste.fr',
+  site: 'https://www.abellanpaysage.com',
+  integrations: [sitemap()],
   trailingSlash: 'always',
   i18n: {
     defaultLocale: 'fr',

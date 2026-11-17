@@ -19,6 +19,7 @@ const { lang, routeKey, projectSlug, title, description, showIntro = false } = A
 const t = useTranslations(lang);
 const pageTitle = title ? `${title} — ${t('brand.name')}` : t('meta.title');
 const pageDescription = description ?? t('meta.description');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -30,6 +31,12 @@ const pageDescription = description ?? t('meta.description');
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={new URL('/images/brand/logo-abellan.png', Astro.site)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
